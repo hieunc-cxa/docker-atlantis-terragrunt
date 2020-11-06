@@ -1,10 +1,7 @@
-# repos.yaml
-# Specify TERRAGRUNT_TFPATH environment variable to accomodate setting --default-tf-version
+---
 repos:
-- id: "/.*/"
-  workflow: terragrunt
-  apply_requirements: [approved, mergeable]
-  allowed_overrides: [apply_requirements]
+- id: /.*/
+  allowed_overrides: [apply_requirements, workflow]
 workflows:
   terragrunt:
     plan:
